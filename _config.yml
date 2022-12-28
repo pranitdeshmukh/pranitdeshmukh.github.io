@@ -1,6 +1,6 @@
 # Site settings
-title: A blog about lorem ipsum dolor sit amet
-description: A blog about lorem ipsum dolor sit amet
+title: Pranit Deshmukh
+description: Pranit deshmukh
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
@@ -10,8 +10,8 @@ user_description: Data Engineer with experience in Business Analysis,Business in
 user_title: Data Engineering Architect
 email: pranit@fizzbi.com
 twitter_username: https://twitter.com/pranitpdeshmukh
-github_username:  lorem_ipsum
-linkedin_username:  lorem_ipsum
+github_username:  
+linkedin_username:  
 
 # Google-analytics
 google-analytics:
