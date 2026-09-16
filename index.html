@@ -346,6 +346,36 @@ section{position:relative;padding:clamp(70px,10vh,130px) clamp(18px,4vw,52px);ma
   transition:transform .15s,border-color .2s;
 }
 .btn-ghost:hover{border-color:var(--signal);transform:translateY(-2px);text-decoration:none}
+/* animated LinkedIn connect button — conic glow border + radar ping */
+.btn-connect{
+  position:relative;display:inline-flex;align-items:center;gap:12px;
+  font-weight:600;font-size:16px;color:var(--ink);
+  border-radius:12px;padding:15px 30px;overflow:hidden;z-index:0;
+  transition:transform .15s;
+}
+.btn-connect::before{
+  content:"";position:absolute;z-index:-2;
+  width:220%;aspect-ratio:1;left:50%;top:50%;
+  translate:-50% -50%;
+  background:conic-gradient(from 0deg,transparent 0 68%,var(--pulse) 78%,var(--signal) 86%,transparent 96%);
+  animation:spin 3.2s linear infinite;
+}
+@keyframes spin{to{rotate:1turn}}
+.btn-connect::after{
+  content:"";position:absolute;inset:2px;border-radius:10px;z-index:-1;
+  background:linear-gradient(160deg,rgba(92,232,197,.10),var(--panel) 60%);
+}
+.btn-connect:hover{transform:translateY(-2px);text-decoration:none}
+.btn-connect .ping{
+  position:relative;width:9px;height:9px;border-radius:50%;flex-shrink:0;
+  background:var(--signal);box-shadow:0 0 10px var(--signal);
+}
+.btn-connect .ping::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:1px solid var(--signal);
+  animation:radar 1.8s ease-out infinite;
+}
+@keyframes radar{from{transform:scale(1);opacity:.9}to{transform:scale(3.4);opacity:0}}
 footer{
   padding:32px clamp(18px,4vw,52px);color:var(--dim);font-size:13px;
   display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;border-top:1px solid var(--line);
@@ -745,7 +775,7 @@ footer{
       <div>
         <p style="color:var(--dim);max-width:420px;margin-top:14px">Open a channel below, or reach me directly — I usually respond within a day or two.</p>
         <div class="contact-row">
-          <a class="btn-solid" href="https://www.linkedin.com/in/pranitdeshmukh" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+          <a class="btn-connect" href="https://www.linkedin.com/in/pranitdeshmukh" target="_blank" rel="noopener"><span class="ping" aria-hidden="true"></span>Connect on LinkedIn ↗</a>
           <button class="btn-ghost" id="contact-ask" type="button">Ask my assistant instead</button>
         </div>
       </div>
