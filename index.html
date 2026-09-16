@@ -99,8 +99,25 @@ nav{
   background:rgba(3,6,9,.72);backdrop-filter:blur(10px);
   font-family:var(--mono);font-size:12.5px;
 }
-.nav-mark{font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:-.02em;color:var(--ink)}
-.nav-mark em{font-style:normal;font-weight:400;color:var(--dim)}
+.nav-mark{
+  font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--signal) 0%,var(--pulse) 50%,var(--signal) 100%);
+  background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:name-shimmer 6s linear infinite;
+}
+@keyframes name-shimmer{to{background-position:200% 0}}
+.nav-mark{display:inline-flex;align-items:center;gap:10px}
+.nav-mark em{
+  font-style:normal;background:none;
+  color:var(--signal);-webkit-text-fill-color:var(--signal);
+}
+.nav-mark .led{
+  width:11px;height:11px;border-radius:50%;flex-shrink:0;
+  background:var(--signal);box-shadow:0 0 12px var(--signal);
+  animation:blink-dot 1.1s steps(1) infinite;
+}
+@keyframes blink-dot{50%{opacity:0}}
 nav .tele{display:flex;gap:22px;color:var(--dim);margin-left:auto}
 nav .tele .lit{color:var(--signal)}
 nav .cmdk{
@@ -552,7 +569,7 @@ footer{
 </div>
 
 <nav>
-  <a class="nav-mark" href="#top" aria-label="Home">Pranit <em>Deshmukh</em></a>
+  <a class="nav-mark" href="#top" aria-label="Home"><span class="led" aria-hidden="true"></span><span>pranit<em>.</em>deshmukh</span></a>
   <div class="tele">
     <span>LOC <span class="lit">FRANKFURT</span></span>
     <span>TIME <span class="lit" id="clock">--:--:--</span></span>
@@ -810,7 +827,7 @@ footer{
 
 <footer>
   <span>© 2026 Pranit Deshmukh · Frankfurt Rhine-Main</span>
-  <span>v2.0 · pipeline healthy · assistant online</span>
+  <span>pipeline healthy · assistant online</span>
 </footer>
 
 <div id="palette" role="dialog" aria-label="Command palette">
@@ -850,7 +867,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const boot = document.getElementById('boot');
   const out = document.getElementById('boot-text');
   const lines = [
-    ['> pranit.os v2.0 — initializing', ''],
+    ['> pranit.os — initializing', ''],
     ['> mounting experience: 9+ years', 'ok'],
     ['> loading stack: palantir · llms · aws · azure', 'ok'],
     ['> verifying certifications: 12/12', 'ok'],
@@ -1100,6 +1117,30 @@ const Assistant = (function(){
      a:"<b>Accenture</b> (2017–2019) is where the pipeline started: Associate → Analyst, building Talend ETL against Big Data HIVE sources, dimensional models, orchestration and performance tuning."},
     {keys:['aquilliance','anaplan','salesforce'],
      a:"At <b>aquilliance GmbH</b> in Hamburg (2022–2023) he owned client data solutions end to end — including integrating <b>Salesforce with Anaplan</b> (via AWS Lambda + Python) and with Dynamics 365, plus Anaplan model building. He's an Anaplan Certified Model Builder."},
+    {keys:['why hire','strength','value','stand out','unique','different','best at'],
+     a:"Three things set Pranit apart:\n\n1. <b>Full pipeline ownership</b> — he's built everything from raw ETL to the AI layer on top\n2. <b>Enterprise scale</b> — Fortune-500 environments like Johnson Controls, Western Union and Deloitte clients\n3. <b>Certified depth</b> — Palantir, Azure, Talend, Anaplan, SAFe\n\nAnd he speaks both engineer and stakeholder fluently."},
+    {keys:['project','achievement','highlight','proud','delivered','accomplish'],
+     a:"Career highlights:\n\n• Pioneered Western Union's <b>data modernization</b> as its first recruit\n• Solo end-to-end delivery of client data platforms at aquilliance\n• Architected EMEALA-wide data platforms at Johnson Controls\n• Now shipping <b>LLM workflows on Palantir AIP</b> for Business AI"},
+    {keys:['governance','data quality','mdm','master data','catalog','alation','profiling'],
+     a:"Yes — governance is part of his toolkit: <b>Informatica Cloud Data Governance & Catalog</b> certified, an <b>Alation</b> badge holder, technical data profiling with Talend DQ, and Talend MDM for master data management at Western Union."},
+    {keys:['power bi','tableau','visuali','dashboard','kpi','reporting','bi '],
+     a:"He builds the front of the pipeline too: <b>Power BI</b> and <b>Tableau</b> dashboards, plus complex SQL for KPI reporting — a regular part of his Deloitte and Johnson Controls work."},
+    {keys:['erp','oracle','sap','jde','baan','iscala','fusion','dynamics','crm'],
+     a:"Deep ERP integration experience: <b>Oracle Fusion & EBS, SAP, JDE, BAAN, Iscala</b>, plus Salesforce CRM and Dynamics 365 — mostly extracting and integrating their data into warehouses, lakes and analytics platforms."},
+    {keys:['python','pyspark','spark','data science','java','programming','code'],
+     a:"Core languages: <b>Python</b> and SQL/HQL, with <b>PySpark</b> for distributed processing (one of his top LinkedIn skills), Core Java in his background, and Databricks in the mix. Data science is part of the toolkit too."},
+    {keys:['agile','scrum','jira','methodology','way of working','safe 5','safe®'],
+     a:"He's a <b>Certified SAFe® 5 Practitioner</b> and works agile — Scrum, Jira, monthly release cycles, peer code reviews and UAT/production support routines honed during his consulting years."},
+    {keys:['n8n','automate','automation','business process'],
+     a:"Yes — he uses <b>N8N</b> for workflow automation alongside custom Python, and builds LLM-powered automation at Johnson Controls. Business process automation has been a theme throughout his career."},
+    {keys:['available','freelance','consulting','opportunity','open to','collaborate','offer','recruit'],
+     a:"His profile status reads <b>open_to_conversations</b> — the best move is to message him on LinkedIn (linkedin.com/in/pranitdeshmukh) or use the contact form below with a few details about what you have in mind."},
+    {keys:['salary','rate','compensation','pay','charge'],
+     a:"That's a conversation for Pranit himself — reach out via LinkedIn or the contact form and he'll take it from there."},
+    {keys:['hobby','hobbies','free time','fun','personal life','family','married'],
+     a:"I only cover the professional side! For anything beyond work you'd have to ask Pranit himself — LinkedIn is the best channel."},
+    {keys:['how many years','how long','years of experience','since when','total experience'],
+     a:"About <b>9+ years</b> — from January 2017 at Accenture to today, spanning ETL development, data architecture and now AI engineering."},
     {keys:['hello','hi ','hey','hallo','who are you','what are you','assistant'],
      a:"Hi! I'm Pranit's assistant. I know his experience, stack, certifications and how to reach him. What would you like to know?"},
     {keys:['this site','website','built','made','how does'],
