@@ -7,6 +7,13 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Pranit Deshmukh — Senior AI Engineer · Data Engineer &amp; Architect</title>
 <meta name="description" content="Pranit Deshmukh — Senior AI Engineer and Data Engineer & Architect in Frankfurt. 9+ years building enterprise data platforms and AI systems. Palantir, LLMs, Talend, AWS, Azure.">
+<!-- social preview — if your site URL differs, update the two absolute URLs below -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pranit Deshmukh — Senior AI Engineer · Data Engineer & Architect">
+<meta property="og:description" content="9+ years from raw enterprise data to production AI — Palantir Foundry & AIP, LLM workflows, AWS & Azure. Ask my AI assistant.">
+<meta property="og:image" content="https://pranitdeshmukh.github.io/og-image.png">
+<meta property="og:url" content="https://pranitdeshmukh.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -288,6 +295,21 @@ section{position:relative;padding:clamp(70px,10vh,130px) clamp(18px,4vw,52px);ma
 .stage p{color:var(--dim);margin-top:12px;max-width:640px;font-size:15.5px}
 .stage .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .stage .tags span{font-family:var(--mono);font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:rgba(10,17,29,.6)}
+/* nested roles within one company (promotions / role changes) */
+.sub-roles{position:relative;margin-top:20px;padding-left:28px}
+.sub-roles::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line-hi)}
+.sub-role{position:relative;padding-bottom:32px}
+.sub-role:last-child{padding-bottom:0}
+.sub-role::before{
+  content:"";position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;
+  background:var(--void);border:2px solid var(--pulse);
+}
+.sub-role.now::before{border-color:var(--signal);box-shadow:0 0 10px rgba(92,232,197,.7)}
+.sub-when{font-family:var(--mono);font-size:12px;color:var(--dim);display:block;margin-bottom:4px}
+.sub-role.now .sub-when{color:var(--signal)}
+.sub-role h4{font-size:clamp(16.5px,2vw,20px);font-weight:600;letter-spacing:-.01em}
+.sub-role .where{margin-top:1px}
+.sub-role p{margin-top:8px}
 
 /* stack — tilt cards */
 .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;perspective:1200px}
@@ -619,7 +641,7 @@ footer{
   </div>
   <div class="about-grid">
     <div class="about-copy">
-      <p>I'm a <b>Data Engineer and Architect</b> turned <b>Senior AI Engineer</b>, based in the Frankfurt Rhine-Main area. My path runs through Accenture, Deloitte, Western Union and aquilliance to Johnson Controls — from dimensional models and Talend jobs, to regional data platforms, to shipping business AI on Palantir and LLMs.</p>
+      <p>I'm a <b>Data Engineer and Architect</b> turned <b>Senior AI Engineer</b>, based in the Frankfurt Rhine-Main area. My path runs through Accenture, Deloitte, Western Union and Aquilliance to Johnson Controls — from dimensional models and Talend jobs, to regional data platforms, to shipping business AI on Palantir and LLMs.</p>
       <p>The thread connecting all of it: data only matters when it changes a decision. I've spent my career shortening the distance between a source system and the moment someone — or something — acts on what it says.</p>
     </div>
     <div class="term-card" aria-label="Profile summary">
@@ -645,53 +667,72 @@ footer{
     <span class="packet p2" aria-hidden="true"></span>
     <span class="packet p3" aria-hidden="true"></span>
     <article class="stage live">
-      <span class="stage-when">Jun 2026 — present</span>
-      <h3>Senior AI Engineer, Business AI · <span class="org">Johnson Controls</span></h3>
-      <div class="where">Frankfurt Rhine-Main, Germany</div>
-      <p>Building AI that the business actually runs on — LLM-powered workflows and enterprise AI use cases on top of the data foundations I helped architect.</p>
-      <div class="tags"><span>LLMs</span><span>Palantir AIP</span><span>Business AI</span><span>Python</span></div>
-    </article>
-    <article class="stage">
-      <span class="stage-when">Jul 2025 — Jun 2026</span>
-      <h3>IT Business Data Engineer &amp; Architect, Enterprise AI · <span class="org">Johnson Controls</span></h3>
-      <div class="where">Düsseldorf, Germany</div>
-      <p>Designed and built the data engineering backbone for enterprise AI initiatives — turning fragmented enterprise sources into AI-ready data products on Palantir Foundry.</p>
-      <div class="tags"><span>Palantir Foundry</span><span>Data Architecture</span><span>Enterprise AI</span></div>
-    </article>
-    <article class="stage">
-      <span class="stage-when">Feb 2023 — Jul 2025</span>
-      <h3>IT Business Data Engineer &amp; Architect, EMEALA Data Team · <span class="org">Johnson Controls</span></h3>
-      <div class="where">Düsseldorf, Germany</div>
-      <p>Regional data engineering and architecture across EMEALA — integrating ERPs and business systems into governed, analytics-ready platforms.</p>
-      <div class="tags"><span>Data Platforms</span><span>ERP Integration</span><span>Governance</span></div>
+      <span class="stage-when">Feb 2023 — present · 3 yrs 8 mos</span>
+      <h3><span class="org">Johnson Controls</span></h3>
+      <div class="where">Germany</div>
+      <div class="sub-roles">
+        <div class="sub-role now">
+          <span class="sub-when">Jun 2026 — present</span>
+          <h4>Senior AI Engineer, Business AI</h4>
+          <div class="where">Frankfurt Rhine-Main</div>
+          <p>Building AI that the business actually runs on — LLM-powered workflows and enterprise AI use cases on top of the data foundations I helped architect.</p>
+          <div class="tags"><span>LLMs</span><span>Palantir AIP</span><span>Business AI</span><span>Python</span><span>Data Engineering</span><span>AWS</span><span>Azure</span></div>
+        </div>
+        <div class="sub-role">
+          <span class="sub-when">Jul 2025 — Jun 2026</span>
+          <h4>IT Business Data Engineer &amp; Architect, Enterprise AI</h4>
+          <div class="where">Düsseldorf</div>
+          <p>Designed and built the data engineering backbone for enterprise AI initiatives — turning fragmented enterprise sources into AI-ready data products on Palantir Foundry.</p>
+          <div class="tags"><span>Palantir Foundry</span><span>Data Architecture</span><span>Enterprise AI</span><span>Python</span><span>Data Engineering</span><span>AWS</span><span>Azure</span></div>
+        </div>
+        <div class="sub-role">
+          <span class="sub-when">Feb 2023 — Jul 2025</span>
+          <h4>IT Business Data Engineer &amp; Architect, EMEALA Data Team</h4>
+          <div class="where">Düsseldorf</div>
+          <p>Regional data engineering and architecture across EMEALA — integrating ERPs and business systems into governed, analytics-ready platforms.</p>
+          <div class="tags"><span>Data Platforms</span><span>ERP Integration</span><span>Governance</span><span>Python</span><span>Data Engineering</span><span>AWS</span><span>Azure</span></div>
+        </div>
+      </div>
     </article>
     <article class="stage">
       <span class="stage-when">Jul 2022 — Jan 2023</span>
-      <h3>Data Engineer · <span class="org">aquilliance GmbH</span></h3>
+      <h3>Data Engineer · <span class="org">Aquilliance GmbH</span></h3>
       <div class="where">Hamburg, Germany</div>
       <p>Owned client data solutions end to end — requirements, production environment setup, and delivery. Integrated Salesforce with Anaplan and Dynamics 365 via custom pipelines, Talend and AWS Lambda.</p>
-      <div class="tags"><span>Talend</span><span>Anaplan</span><span>Salesforce</span><span>AWS Lambda</span></div>
+      <div class="tags"><span>Talend</span><span>Anaplan</span><span>Salesforce</span><span>AWS Lambda</span><span>Python</span><span>AWS</span><span>Azure</span></div>
     </article>
     <article class="stage">
       <span class="stage-when">Jan 2021 — Jun 2022</span>
       <h3>Data Engineer · <span class="org">Western Union</span></h3>
       <div class="where">Remote / Pune</div>
       <p>First recruit on the data modernization initiative. Led PoCs for the new stack — Salesforce streaming with Kafka and ActiveMQ, Talend MDM, SSIS-to-Talend migration — and translated stakeholder needs into the modernization roadmap.</p>
-      <div class="tags"><span>Data Modernization</span><span>Kafka</span><span>Talend MDM</span><span>PoCs</span></div>
+      <div class="tags"><span>Data Modernization</span><span>Kafka</span><span>Talend MDM</span><span>PoCs</span><span>Python</span><span>AWS</span><span>Azure</span></div>
     </article>
     <article class="stage">
       <span class="stage-when">Apr 2019 — Dec 2020</span>
       <h3>Business Technology Analyst · <span class="org">Deloitte</span></h3>
       <div class="where">India</div>
       <p>Built complex pipelines from legacy transactional systems, CRMs and semi-structured files into AWS and Azure data lakes; KPI dashboards, HIVE-scale data profiling, and monthly production releases.</p>
-      <div class="tags"><span>Informatica BDM / IICS</span><span>AWS · Azure</span><span>HIVE</span><span>SQL</span></div>
+      <div class="tags"><span>Informatica BDM / IICS</span><span>HIVE</span><span>SQL</span><span>Python</span><span>AWS</span><span>Azure</span></div>
     </article>
     <article class="stage">
-      <span class="stage-when">Jan 2017 — Apr 2019</span>
-      <h3>Application Development Associate → Analyst · <span class="org">Accenture</span></h3>
+      <span class="stage-when">Jan 2017 — Apr 2019 · 2 yrs 4 mos</span>
+      <h3><span class="org">Accenture</span></h3>
       <div class="where">India</div>
-      <p>Where the pipeline started: dimensional modeling, Talend ETL at scale, job orchestration and performance tuning against Big Data HIVE sources.</p>
-      <div class="tags"><span>Talend</span><span>Dimensional Modeling</span><span>HIVE</span><span>Orchestration</span></div>
+      <div class="sub-roles">
+        <div class="sub-role">
+          <span class="sub-when">Jun 2018 — Apr 2019</span>
+          <h4>Application Development Analyst</h4>
+          <p>Promoted to Analyst — ownership of complex ETL design, decoupling job flows for independent execution, performance tuning and peer code reviews.</p>
+          <div class="tags"><span>Complex ETL</span><span>Performance Tuning</span><span>Code Reviews</span><span>Python</span><span>Data Engineering</span><span>AWS</span><span>Azure</span></div>
+        </div>
+        <div class="sub-role">
+          <span class="sub-when">Jan 2017 — May 2018</span>
+          <h4>Application Development Associate</h4>
+          <p>Where the pipeline started: Talend ETL against Big Data HIVE sources, dimensional modeling, job orchestration and production support.</p>
+          <div class="tags"><span>Talend</span><span>Dimensional Modeling</span><span>HIVE</span><span>Orchestration</span><span>Python</span><span>Data Engineering</span><span>AWS</span><span>Azure</span></div>
+        </div>
+      </div>
     </article>
   </div>
 </section>
@@ -1090,11 +1131,11 @@ const Assistant = (function(){
     {keys:['palantir','foundry','aip','ontology'],
      a:"Yes — Palantir is a core part of his current toolkit. He's certified in <b>Palantir Foundry Foundations</b> (Jun 2024) and <b>Palantir AIP Workflows</b> (Dec 2024), and uses both to build enterprise AI and data products at Johnson Controls."},
     {keys:['experience','career','history','background','worked','companies','journey','path','cv','resume'],
-     a:"~9+ years, in pipeline order:\n\n• <b>Accenture</b> (2017–2019) — ETL & dimensional modeling with Talend\n• <b>Deloitte</b> (2019–2020) — data lakes on AWS & Azure, Informatica\n• <b>Western Union</b> (2021–2022) — first hire on data modernization\n• <b>aquilliance</b> (2022–2023) — end-to-end client data solutions\n• <b>Johnson Controls</b> (2023–now) — data architecture → Enterprise AI → Senior AI Engineer\n\nScroll to the Experience section for the full pipeline."},
+     a:"~9+ years, in pipeline order:\n\n• <b>Accenture</b> (2017–2019) — ETL & dimensional modeling with Talend\n• <b>Deloitte</b> (2019–2020) — data lakes on AWS & Azure, Informatica\n• <b>Western Union</b> (2021–2022) — first hire on data modernization\n• <b>Aquilliance</b> (2022–2023) — end-to-end client data solutions\n• <b>Johnson Controls</b> (2023–now) — data architecture → Enterprise AI → Senior AI Engineer\n\nScroll to the Experience section for the full pipeline."},
     {keys:['skill','stack','tools','tech','technologies','know','good at'],
      a:"His stack, layer by layer:\n\n• <b>AI</b>: Palantir Foundry & AIP, LLM workflows, Python, PySpark\n• <b>Cloud</b>: AWS & Azure (Lambda, Redshift, DynamoDB, Azure SQL, Databricks), Snowflake\n• <b>ETL</b>: Talend (certified), Informatica BDM/IICS, DataStage, Kafka\n• <b>Warehouses</b>: HIVE, SAP HANA, MS-SQL, MySQL, PostgreSQL\n• <b>BI & planning</b>: Power BI, Tableau, Anaplan (certified)"},
     {keys:['etl','talend','informatica','pipeline','integration','datastage','kafka','ssis'],
-     a:"Data integration is where Pranit's career started. He's a <b>Talend Data Integration Certified Developer</b> with production experience in Informatica BDM & IICS, IBM DataStage, Talend MDM/DQ, and streaming with Kafka & ActiveMQ. He's built and migrated ETL at Accenture, Deloitte, Western Union and aquilliance."},
+     a:"Data integration is where Pranit's career started. He's a <b>Talend Data Integration Certified Developer</b> with production experience in Informatica BDM & IICS, IBM DataStage, Talend MDM/DQ, and streaming with Kafka & ActiveMQ. He's built and migrated ETL at Accenture, Deloitte, Western Union and Aquilliance."},
     {keys:['cloud','aws','azure','snowflake','databricks','lambda','redshift'],
      a:"Both major clouds, in production:\n\n• <b>AWS</b> — Lambda, Redshift, DynamoDB, PostgreSQL integrations\n• <b>Azure</b> — Azure SQL, Databricks; 2x Microsoft certified (AZ-900, DP-900)\n• Plus <b>Snowflake</b> (Hands On Essentials certified)\n\nHe's migrated on-prem systems to both clouds and built data lakes on each."},
     {keys:['llm','genai','gen ai','ai engineer','machine learning','ml','artificial'],
@@ -1116,11 +1157,11 @@ const Assistant = (function(){
     {keys:['accenture'],
      a:"<b>Accenture</b> (2017–2019) is where the pipeline started: Associate → Analyst, building Talend ETL against Big Data HIVE sources, dimensional models, orchestration and performance tuning."},
     {keys:['aquilliance','anaplan','salesforce'],
-     a:"At <b>aquilliance GmbH</b> in Hamburg (2022–2023) he owned client data solutions end to end — including integrating <b>Salesforce with Anaplan</b> (via AWS Lambda + Python) and with Dynamics 365, plus Anaplan model building. He's an Anaplan Certified Model Builder."},
+     a:"At <b>Aquilliance GmbH</b> in Hamburg (2022–2023) he owned client data solutions end to end — including integrating <b>Salesforce with Anaplan</b> (via AWS Lambda + Python) and with Dynamics 365, plus Anaplan model building. He's an Anaplan Certified Model Builder."},
     {keys:['why hire','strength','value','stand out','unique','different','best at'],
      a:"Three things set Pranit apart:\n\n1. <b>Full pipeline ownership</b> — he's built everything from raw ETL to the AI layer on top\n2. <b>Enterprise scale</b> — Fortune-500 environments like Johnson Controls, Western Union and Deloitte clients\n3. <b>Certified depth</b> — Palantir, Azure, Talend, Anaplan, SAFe\n\nAnd he speaks both engineer and stakeholder fluently."},
     {keys:['project','achievement','highlight','proud','delivered','accomplish'],
-     a:"Career highlights:\n\n• Pioneered Western Union's <b>data modernization</b> as its first recruit\n• Solo end-to-end delivery of client data platforms at aquilliance\n• Architected EMEALA-wide data platforms at Johnson Controls\n• Now shipping <b>LLM workflows on Palantir AIP</b> for Business AI"},
+     a:"Career highlights:\n\n• Pioneered Western Union's <b>data modernization</b> as its first recruit\n• Solo end-to-end delivery of client data platforms at Aquilliance\n• Architected EMEALA-wide data platforms at Johnson Controls\n• Now shipping <b>LLM workflows on Palantir AIP</b> for Business AI"},
     {keys:['governance','data quality','mdm','master data','catalog','alation','profiling'],
      a:"Yes — governance is part of his toolkit: <b>Informatica Cloud Data Governance & Catalog</b> certified, an <b>Alation</b> badge holder, technical data profiling with Talend DQ, and Talend MDM for master data management at Western Union."},
     {keys:['power bi','tableau','visuali','dashboard','kpi','reporting','bi '],
